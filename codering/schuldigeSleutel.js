@@ -88,3 +88,17 @@ class Codeersleutel {
         return result
     }
 }
+
+
+let sleutel02 = new Codeersleutel("HISPAYMENT", "14K1S2DL1NW4P2R1H3T3U2O6X3A1F6B1G4I1C2V1Y3E2M2J")
+
+
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+readline.question('message to encode: ', name => {
+    console.log(sleutel02.codeer(`${name}`));
+    readline.close();
+});
