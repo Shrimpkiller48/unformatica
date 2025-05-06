@@ -90,5 +90,5 @@ class Codeersleutel {
 }
 
 
-let sleutel02 = new Codeersleutel("AMZLEKRJTHYGUFIDOSPQNWBXVC", "14K1S2DL1NW4P2R1H3T3U2O6X3A1F6B1G4I1C2V1Y3E2M2J")
+let sleutel02 = new Codeersleutel("AMZLEKRJTHYGUFIDOSPQNWBXVC", "A1B4C2D3E4F3G4H3I2J2K2L2M2N2O2P2Q3R5S4T7U6V7W4X5Y3Z")
 console.log(sleutel02.codeer(`${process.argv[2]}`));
