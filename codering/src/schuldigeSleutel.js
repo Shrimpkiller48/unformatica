@@ -14,7 +14,7 @@ class Codeersleutel {
     }
 
     maakVeld(size){
-        let rijtjes=[]
+       let rijtjes=[]
         for (let i = 0 ; i < size ; i++){
             let kolom = []
             for (let j = 0 ; j < size ; j++){
@@ -90,5 +90,5 @@ class Codeersleutel {
 }
 
 
-let sleutel02 = new Codeersleutel("HISPAYMENT", "14K1S2DL1NW4P2R1H3T3U2O6X3A1F6B1G4I1C2V1Y3E2M2J")
+let sleutel02 = new Codeersleutel("AMZLEKRJTHYGUFIDOSPQNWBXVC", "14K1S2DL1NW4P2R1H3T3U2O6X3A1F6B1G4I1C2V1Y3E2M2J")
 console.log(sleutel02.codeer(`${process.argv[2]}`));
