@@ -4,13 +4,15 @@ bericht="$1"
 
 while read -r file; do
 	if [[ "$file" =~ py$ ]]; then
-		python3 "$file" "$bericht"
+		bericht=$(python3 "$file" "$bericht")
 	elif [[ "$file" =~ js$ ]]; then
-		node "$file" "$bericht"
+		bericht=$(node "$file" "$bericht")
 	elif [[ "$file" =~ md$ ]]; then
-
+		:
 	else
 		echo "onbekend script"
 	fi
 
 done < <(find src -type f | sort)
+
+echo "$bericht"
