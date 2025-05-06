@@ -24,7 +24,7 @@ while getopts ':hcd' opt; do
 done 
 shift $((OPTIND - 1))
 
-bericht="$1"
+bericht=$(echo "$1" | tr '[a-z]' '[A-Z]')
 
 while read -r file; do
 	if [[ "$file" =~ py$ ]]; then
