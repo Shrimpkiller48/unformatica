@@ -71,6 +71,10 @@ function vermenigvuldigen(k,v){
     return new Beaufort(result)
 }
 
-const codec = new Beaufort("SECRET")
-console.log(codec.codeer(process.argv[2]))
+const codec = new Beaufort("PETER")
+if (process.argv[3] == "codeer"){
+	console.log(codec.codeer(process.argv[2]))
+} else {
+	console.log(codec.decodeer(process.argv[2]))
+}
 

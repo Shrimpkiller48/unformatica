@@ -1,12 +1,36 @@
 #!/usr/bin/env bash
 
+option="codeer"
+
+while getopts ':hcd' opt; do
+	case ${opt} in 
+		h)
+			echo "Usage: ${COMMAND} [OPTION...] MESSAGE"
+			echo "	-c: codeer, this is the default"
+			echo "	-d: decodeer"
+			echo "encodes or decodes a message through a lot of encodings"
+			exit 0
+			;;
+		c)
+			option="codeer"
+			;;
+		d)
+			option="decodeer"
+			;;
+		\?)
+			echo "Invalid option, use -h for help." 1>&2 && exit 1
+			;;
+	esac
+done 
+shift $((OPTIND - 1))
+
 bericht="$1"
 
 while read -r file; do
 	if [[ "$file" =~ py$ ]]; then
-		bericht=$(python3 "$file" "$bericht")
+		bericht=$(python3 "$file" "$bericht" "$option")
 	elif [[ "$file" =~ js$ ]]; then
-		bericht=$(node "$file" "$bericht")
+		bericht=$(node "$file" "$bericht" "$option")
 	elif [[ "$file" =~ md$ ]]; then
 		:
 	else
