@@ -1,1 +1,14 @@
 #!/usr/bin/env bash
+
+bericht="$1"
+
+while read -r file; do
+	if [[ "$file" =~ py$ ]]; then
+		python3 "$file" "$bericht"
+	elif [[ "$file" =~ js$ ]]; then
+		node "$file" "$bericht"
+	else
+		echo "onbekend script"
+	fi
+
+done < <(find src -type f | sort)
